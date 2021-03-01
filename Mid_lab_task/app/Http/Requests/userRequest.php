@@ -24,7 +24,18 @@ class userRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
+            'fname' => "required|regex:/^[a-zA-Z-' ]*$/|bail",
+            'username' => 'required|unique:all_user_table|bail',
+            'email' => 'required|email:rfc,dns|unique:all_user_table|bail',
+            'password' => 'required|min:6|bail',
+            'cpassword' => 'required|same:password|bail',
+            'address' => 'required',
+            'company' => 'required',
+            'phone' => 'required|numeric',
+            'city' => 'required',
+            'country' => 'required',
+            'type' => 'required'
         ];
     }
 }

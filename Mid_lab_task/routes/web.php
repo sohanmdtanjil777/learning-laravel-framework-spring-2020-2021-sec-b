@@ -18,4 +18,4 @@ Route::get('/', function () {
 
 Route::get('/front_page', 'LoginController@index');
 Route::get('/home/register', 'homeController@index');
-//Route::post('/home/register', 'homeController@index');
+Route::post('/home/register', 'homeController@store_M3F2');
