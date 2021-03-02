@@ -30,8 +30,27 @@ class LoginController extends Controller
 
         if(count($user) > 0 ){
 
-            $req->session()->put('username', $req->username);
-            return redirect('/home');
+            //$req->session()->put('username', $req->username);
+            //return redirect('/home');
+            //echo "login successfull";
+            //print_r($user);
+
+            //print_r($user[0]['type']);
+
+            if($user[0]['type']=='snmp'){
+
+                return redirect('/dashboards/sales_and_marketing_person');
+            }elseif ($user[0]['type']=='accountent') {
+
+                return redirect('/dashboards/accountent');
+            }elseif ($user[0]['type']=='customer') {
+                
+                return redirect('/dashboards/customer');
+            }elseif($user[0]['type']=='admin'){
+                 
+                return redirect('/dashboards/admin'); 
+
+            }
             
         }else{
 

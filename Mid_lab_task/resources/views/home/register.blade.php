@@ -91,7 +91,7 @@
 					<td><br>
 						<select name='type'>
 							<option value="admin" {{ old('type') == "admin" ? 'selected' : '' }}> ADMIN </option>
-							<option value="customer" {{ old('type') == "customer" ? 'selected' : '' }}> USER </option>
+							<option value="customer" {{ old('type') == "customer" ? 'selected' : '' }}> Customer </option>
 							<option value="accountent" {{ old('type') == "accountent" ? 'selected' : '' }}>Accountent </option>
 							<option value="snmp" {{ old('type') == "snmp" ? 'selected' : '' }}>Saler And Marketing </option>
 						</select>

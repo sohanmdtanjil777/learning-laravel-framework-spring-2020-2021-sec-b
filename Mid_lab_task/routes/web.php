@@ -22,3 +22,8 @@ Route::post('/home/register', 'homeController@store_M3F2');
 
 Route::get('/login', 'LoginController@view_login_page');
 Route::post('/login', 'LoginController@verify_M1F2');
+
+Route::get('/dashboards/sales_and_marketing_person', 'dashboardController@viewSnmp');
+Route::get('/dashboards/accountent', 'dashboardController@viewAccountent');
+Route::get('/dashboards/customer', 'dashboardController@viewCustomer');
+Route::get('/dashboards/admin', 'dashboardController@viewAdmin');
