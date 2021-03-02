@@ -25,8 +25,16 @@ class loginRequestM1F2 extends FormRequest
     {
         return [
             
-            'email' => "required|regex:/^[a-zA-Z-' ]*$/|bail",
+            'email' => "required",
             'password' => 'required'
+        ];
+    }
+
+    public function messages(){
+        return [
+
+            'email.required' => "Enter Your Email Address",
+            'password.required' =>"Enter Password"
         ];
     }
 }

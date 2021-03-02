@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/front_page', 'LoginController@index');
 Route::get('/home/register', 'homeController@index');
 Route::post('/home/register', 'homeController@store_M3F2');
+
+Route::get('/login', 'LoginController@view_login_page');
+Route::post('/login', 'LoginController@verify_M1F2');

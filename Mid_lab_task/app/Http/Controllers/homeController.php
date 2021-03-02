@@ -32,9 +32,9 @@ class homeController extends Controller
             $user->type         = $req->type;
             
             $user->save();
-            //return redirect()->route('login.userlist');
+            return redirect('/login');
 
-            echo "submitted";
+            
 
 
     }

@@ -16,6 +16,11 @@ class LoginController extends Controller
         return view('front_page');
     }
 
+    public function view_login_page(){
+
+        return view('login.index');
+    }
+
     public function verify_M1F2(loginRequestM1F2 $req){
 
          $user = allUser::where('email', $req->email)
@@ -27,10 +32,12 @@ class LoginController extends Controller
 
             $req->session()->put('username', $req->username);
             return redirect('/home');
+            
         }else{
 
             $req->session()->flash('msg', 'Invalid username or password...');
             return redirect('/login');
+          
         }
     }
 }
