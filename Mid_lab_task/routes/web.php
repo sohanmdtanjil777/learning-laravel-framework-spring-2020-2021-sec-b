@@ -28,6 +28,9 @@ Route::get('/dashboards/accountent', 'dashboardController@viewAccountent');
 Route::get('/dashboards/customer', 'dashboardController@viewCustomer');
 Route::get('/dashboards/admin', 'dashboardController@viewAdmin');
 
-Route::get('/system/sales/physical_store', 'salesController@physical_store_sales_list');
+Route::get('/system/sales/physical_store_insert', 'salesController@physical_store_sales_insert');
+Route::post('/system/sales/physical_store_insert', 'salesController@physical_store_sales_data_entry');
+
+
 Route::get('/system/sales/social_media', 'salesController@social_media_sales_list');
 Route::get('/system/sales/ecommerce', 'salesController@ecommerce_website_sales_list');
