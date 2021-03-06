@@ -38,6 +38,25 @@ class salesController extends Controller
 
     }
 
+    public function current_and_last_seven(){
+      $current_day = Physical_store_sales::whereDate('created_at', date('Y-m-d'))->get();
+
+      $last_seven = self::last_seven_days_sales();
+
+      //print_r($current_day);
+      //print_r($last_seven);
+
+      return view('system_sales.show_sold_products')->with('current', $current_day)->with('seven' , $last_seven);
+
+    }
+
+    public function last_seven_days_sales(){
+
+      $last_seven_days_sales = Physical_store_sales::whereDate('created_at', now()->subDays(1))->get();
+
+      return $last_seven_days_sales;
+    }
+
 
     public function physical_store_sales_list(){
 
