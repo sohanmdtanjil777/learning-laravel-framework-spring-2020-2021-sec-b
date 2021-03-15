@@ -64,4 +64,19 @@ class salesController extends Controller
         
         return view('system_sales.physical_store_sales_list')->with('p_s_list', $physical_store_sales_list);
     }
+
+    public function physical_store_sales_list(){
+
+        $social_media_sales_list = Social_media_sales::all();
+        
+        return view('system_sales.social_media_sales_list')->with('s_m_s_list', $social_media_sales_list);
+    }
+
+    public function view_insert_product(){
+
+        
+        return view('show_product.insert_product');
+    }
+
+
 }

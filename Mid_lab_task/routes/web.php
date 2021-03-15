@@ -35,4 +35,8 @@ Route::post('/system/sales/physical_store_insert', 'salesController@physical_sto
 Route::get('/system/sales/social_media', 'salesController@social_media_sales_list');
 Route::get('/system/sales/ecommerce', 'salesController@ecommerce_website_sales_list');
 
-Route::get('/system/sales/physical_store', 'salesController@current_and_last_seven');
+Route::get('/system/sales/current_sales', 'salesController@current_and_last_seven');
+
+Route::get('/system/sales/physical_store', 'salesController@physical_store_sales_list');
+
+Route::get('/product/insert_product', 'salesController@view_insert_product');

@@ -7,32 +7,38 @@
 
 <a href="/logout">logout</a><br><br>
 
+<h1>Today's Sold Products</h1>
+
 <table border="1">
         <tr>
-            <td>Product_id</td>
-            <td>Product_name</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Customer Name</td>
-            <td>Customer Id</td>
+            <td>customer_name</td>
+            <td>customer_address</td>
+            <td>phone_no</td>
+            <td>product_id</td>
+            <td>product_name</td>
+            <td>quantity</td>
+            <td>total_price</td>
+            <td>product_status</td>
+            
         </tr>
 
-        @for($i=0; $i < count($p_s_list); $i++)
+        @foreach ($physical_product_list as $p_s_list)
         <tr>
-            <td>{{ $p_s_list[$i]['product_id'] }}</td>
-            <td>{{ $p_s_list[$i]['product_name'] }}</td>
-            <td>{{ $p_s_list[$i]['price'] }}</td>
-            <td>{{ $p_s_list[$i]['quantity'] }}</td>
-            <td>{{ $p_s_list[$i]['customer_name'] }}</td>
-            <td>{{ $p_s_list[$i]['customer_id'] }}</td>
+            <td>{{ $p_s_list->customer_name }}</td>
+            <td>{{ $p_s_list->customer_address }}</td>
+            <td>{{ $p_s_list->phone_no }}</td>
+            <td>{{ $p_s_list->product_id }}</td>
+            <td>{{ $p_s_list->product_name }}</td>
+            <td>{{ $p_s_list->quantity }}</td>
+            <td>{{ $p_s_list->total_price }}</td>
+            <td>{{ $p_s_list->product_status }}</td>
             
 
             <td>
-                <a href="/home/delete/{{ $p_s_list[$i]['id'] }}">Delete</a> |
-                <a href="{{route('home.details', [$p_s_list[$i]['id']]) }}">Details</a>
+                <a href="/system_sales/product_details/{{ $p_s_list->id }}">Details</a>
             </td>
         </tr>
-        @endfor
+        @endforeach
     </table>
 </body>
 </html>
