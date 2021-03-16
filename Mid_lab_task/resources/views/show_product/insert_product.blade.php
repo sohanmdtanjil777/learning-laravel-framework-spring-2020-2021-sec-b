@@ -37,7 +37,7 @@
 				</tr>
 
 				<tr>
-					<td><br>product_id</td>
+					<td><br>vendor_id</td>
 					<td><br><input type="text" name="p_id" value="{{old('p_id')}}">
                       
                     <span>{{ $errors->first('p_id') }}</span>

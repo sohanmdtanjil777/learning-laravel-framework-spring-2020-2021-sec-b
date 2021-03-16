@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Physical_store_sales;
+use App\insert_product;
+
 
 class salesController extends Controller
 {
@@ -31,9 +33,9 @@ class salesController extends Controller
             $sales_data->product_status         = 'sold';
             
             $sales_data->save();
-            //return redirect('/login');
+    
 
-            echo "done done";
+            
 
 
     }
@@ -76,6 +78,34 @@ class salesController extends Controller
 
         
         return view('show_product.insert_product');
+    }
+
+
+    public function insert_product(Request $req){
+
+
+            $product_data = new insert_product();
+
+            $product_data->product_name     = $req->p_name;
+            $product_data->category     = $req->category;
+            $product_data->unit_price         = $req->unit_price;
+            $product_data->p_status         = $req->product_status;
+            
+            $product_data->save();
+    
+
+            return redirect('/show_product/existing_product');
+    }
+
+
+    public function show_existing_product(){
+          
+       $existing_product = insert_product::where('p_status', '=', 'existing')
+                                           ->get(); 
+
+
+        return view('show_product.existing_product')->with('existing', $existing_product);
+
     }
 
 

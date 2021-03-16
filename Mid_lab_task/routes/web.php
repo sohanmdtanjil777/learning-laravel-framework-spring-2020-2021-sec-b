@@ -40,3 +40,5 @@ Route::get('/system/sales/current_sales', 'salesController@current_and_last_seve
 Route::get('/system/sales/physical_store', 'salesController@physical_store_sales_list');
 
 Route::get('/product/insert_product', 'salesController@view_insert_product');
+
+Route::post('/product/insert_product', 'salesController@insert_product');
