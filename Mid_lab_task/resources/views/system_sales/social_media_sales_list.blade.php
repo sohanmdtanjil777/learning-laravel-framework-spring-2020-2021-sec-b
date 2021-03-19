@@ -5,6 +5,8 @@
 </head>
 <body>
 
+<h1>go to <a href="{{ route('dashboard') }}">Dashboard</a></h1>  
+
 <a href="/logout">logout</a><br><br>
 
 
@@ -20,6 +22,7 @@
             <td>quantity</td>
             <td>total_price</td>
             <td>product_status</td>
+            <td>Details</td>
             
         </tr>
 
@@ -33,10 +36,8 @@
             <td>{{ $s_m_s_list[$j]['quantity'] }}</td>
             <td>{{ $s_m_s_list[$j]['total_price'] }}</td>
             <td>{{ $s_m_s_list[$j]['product_status'] }}</td>
-            
-
             <td>
-                <a href="/system_sales/product_details/{{$s_m_s_list[$j]['id']}}">Details</a>
+                <a href="/system_sales/product_details_social_media/{{$s_m_s_list[$j]['id']}}">Details</a>
             </td>
         </tr>
         @endfor

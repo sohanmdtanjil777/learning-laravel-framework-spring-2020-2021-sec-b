@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Physical_store_sales;
+use App\Social_media_sales;
+
+
 use App\insert_product;
 
 
@@ -34,7 +37,7 @@ class salesController extends Controller
             
             $sales_data->save();
     
-
+      echo "<h2>Product Record Inserted</h2>";
             
 
 
@@ -64,49 +67,54 @@ class salesController extends Controller
 
         $physical_store_sales_list = Physical_store_sales::all();
         
-        return view('system_sales.physical_store_sales_list')->with('p_s_list', $physical_store_sales_list);
+        return view('system_sales.physical_store_sales_list')->with('physical_product_list', $physical_store_sales_list);
     }
 
-    public function physical_store_sales_list(){
+
+
+
+    public function social_media_sales_list(){
 
         $social_media_sales_list = Social_media_sales::all();
         
         return view('system_sales.social_media_sales_list')->with('s_m_s_list', $social_media_sales_list);
     }
 
-    public function view_insert_product(){
+
+    public function product_details($id){
+
+      
+        $all_sold_product_details = Physical_store_sales::find($id);
+
 
         
-        return view('show_product.insert_product');
+        
+        return view('system_sales.details')->with('all_details', $all_sold_product_details);
+
+    }
+
+    public function product_details_social_media($id){
+
+      
+        $social_media_product_details = Social_media_sales::find($id);
+
+
+        
+        
+        return view('system_sales.details')->with('all_details', $social_media_product_details);
+
     }
 
 
-    public function insert_product(Request $req){
 
 
-            $product_data = new insert_product();
-
-            $product_data->product_name     = $req->p_name;
-            $product_data->category     = $req->category;
-            $product_data->unit_price         = $req->unit_price;
-            $product_data->p_status         = $req->product_status;
-            
-            $product_data->save();
-    
-
-            return redirect('/show_product/existing_product');
-    }
 
 
-    public function show_existing_product(){
-          
-       $existing_product = insert_product::where('p_status', '=', 'existing')
-                                           ->get(); 
 
 
-        return view('show_product.existing_product')->with('existing', $existing_product);
 
-    }
+
+
 
 
 }

@@ -5,6 +5,8 @@
 </head>
 <body>
 
+<h1>go to <a href="{{ route('dashboard') }}">Dashboard</a></h1>
+
 <a href="/logout">logout</a><br><br>
 
 <h1>Today's Sold Products</h1>
@@ -19,6 +21,7 @@
             <td>quantity</td>
             <td>total_price</td>
             <td>product_status</td>
+            <td>Details</td>
             
         </tr>
 
@@ -53,6 +56,7 @@
             <td>quantity</td>
             <td>total_price</td>
             <td>product_status</td>
+            <td>Details</td>
             
         </tr>
 

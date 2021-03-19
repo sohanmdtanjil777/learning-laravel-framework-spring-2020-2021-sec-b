@@ -26,15 +26,15 @@ class userRequest extends FormRequest
         return [
             
             'fname' => "required|regex:/^[a-zA-Z-' ]*$/|min:3|max:30|bail",
-            'username' => 'required|unique:all_user_table|min:3|max30|bail',
+            'username' => 'required|unique:all_user_table|min:3|max:30|bail',
             'email' => 'required|email:rfc,dns|unique:all_user_table|min:10|max:50|bail',
             'password' => 'required|min:6|bail',
             'cpassword' => 'required|same:password|bail',
             'address' => 'required',
-            'company' => 'required|min:3|max20|bail',
-            'phone' => 'required|numeric|min:11|max15|bail',
-            'city' => 'required|min:3|max20|bail',
-            'country' => 'required|min:3|max20|bail',
+            'company' => 'required|min:3|max:20|bail',
+            'phone' => 'required|numeric|bail',
+            'city' => 'required|min:3|max:20|bail',
+            'country' => 'required|min:3|max:20|bail',
             'type' => 'required'
         ];
     }

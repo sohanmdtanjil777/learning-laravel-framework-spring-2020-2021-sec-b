@@ -9,6 +9,6 @@ class insert_product extends Model
     
     protected $table = 'product_table';
     public $timestamps = true;
-    protected $primaryKey = 'product_id';
+    protected $primaryKey = 'id';
 
 }
